@@ -1,0 +1,16 @@
+---
+layout: layout.njk
+title: Home
+---
+
+<h1>Hello world</h1>
+
+{% set posts = search.pages("type=post", "date=asc", 3) %}
+
+<ul>
+{% for post in posts %}
+    <li>
+        {% include "templates/post.njk" %}
+    </li>
+{% endfor %}
+</ul>
